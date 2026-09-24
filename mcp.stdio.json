@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "resemble-ai-local": {
+      "command": "resemble-mcp",
+      "env": {
+        "RESEMBLE_API_KEY": "${RESEMBLE_API_KEY}"
+      }
+    }
+  }
+}

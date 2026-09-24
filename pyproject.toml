@@ -1,0 +1,20 @@
+[project]
+name = "resemble-ai-connector"
+version = "0.1.0"
+description = "Resemble AI authenticity MCP connector for Grok Bot and Muse"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp>=1.9,<2",
+  "httpx>=0.27",
+]
+
+[project.scripts]
+resemble-mcp = "resemble_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["server"]

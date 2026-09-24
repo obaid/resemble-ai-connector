@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "resemble-ai": {
+      "url": "https://mcp.resemble.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${RESEMBLE_API_KEY}"
+      }
+    }
+  }
+}

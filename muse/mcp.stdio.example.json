@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "resemble-ai": {
+      "command": "python",
+      "args": ["-m", "resemble_mcp"],
+      "cwd": "/absolute/path/to/resemble-ai-connector/server",
+      "env": {
+        "RESEMBLE_API_KEY": "YOUR_KEY",
+        "PYTHONPATH": "/absolute/path/to/resemble-ai-connector/server"
+      }
+    }
+  }
+}

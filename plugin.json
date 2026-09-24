@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "resemble-ai",
+  "version": "0.1.0",
+  "description": "Investigate media authenticity with Resemble Detect Agents and deepfake Detect. For Grok Bot and Muse (Agent Plugins + MCP).",
+  "author": {
+    "name": "Obaid Ahmed"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/obaid/resemble-ai-connector",
+  "keywords": [
+    "mcp",
+    "resemble",
+    "deepfake",
+    "detect",
+    "grok-bot",
+    "muse",
+    "authenticity"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "RESEMBLE_API_KEY": {
+        "type": "string",
+        "title": "Resemble API key",
+        "description": "Bearer token from https://app.resemble.ai/hub/api (Account \u2192 API)."
+      }
+    },
+    "required": [
+      "RESEMBLE_API_KEY"
+    ]
+  }
+}

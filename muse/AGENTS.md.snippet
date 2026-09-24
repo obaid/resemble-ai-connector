@@ -1,0 +1,12 @@
+# Resemble authenticity connector
+
+When a task needs media authenticity, deepfake detection, or Detect Agent investigation, use the `resemble-ai` MCP tools.
+
+Workflow:
+1. `resemble_list_detect_agents` — pick the agent that matches the workflow (social, news, document, evidence, ID, web).
+2. `resemble_run_investigation` with a public HTTPS `url` and a clear `query`.
+3. For raw deepfake scores on audio/image/video, use `resemble_create_detection` (prefer `url`, `wait=true`). Optionally enable `intelligence`, `detect_watermark`, or `audio_source_tracing`.
+4. Follow up with `resemble_get_detection` or `resemble_ask_detection_question` when needed.
+5. Summarize recommended_action / label / confidence for the user. Do not invent scores.
+
+Never commit API keys. Prefer public URLs over uploading private media unless the user asks.
