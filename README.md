@@ -27,6 +27,14 @@ Docs: [docs.resemble.ai](https://docs.resemble.ai) · Auth: `Authorization: Bear
 | `resemble_get_detection_answer` | Poll Intelligence answer |
 | `resemble_account` | API key sanity check |
 
+## One-line install (Grok Bot)
+
+Ask any Grok Bot:
+
+> Add Resemble MCP so that you can investigate media authenticity by following https://github.com/obaid/resemble-ai-connector/blob/main/instructions.md
+
+That file is written for the bot: it adds MCP via `uvx` from this repo, smoke-checks, then does the job you named. Full steps: [instructions.md](instructions.md).
+
 ## Install (local)
 
 ```bash

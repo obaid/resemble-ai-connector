@@ -5,18 +5,29 @@ description: Install or configure the Resemble AI authenticity connector for Gro
 
 # Install Resemble connector
 
-## Grok Bot
-1. Ensure `RESEMBLE_API_KEY` is available (Account → API at app.resemble.ai).
-2. Install this Agent Plugin from the marketplace once published, **or** ask the bot: add a custom MCP server `resemble-ai` with command `uvx` and args from `mcp.json`, env `RESEMBLE_API_KEY`.
-3. For a local checkout on the bot computer: `pip install -e .` then command `resemble-mcp` (or `python -m resemble_mcp` with `PYTHONPATH=server`).
-4. Confirm with `resemble_account` or `resemble_list_detect_agents`.
+Canonical bot-facing steps live in the repo root: [instructions.md](../../instructions.md). Prefer that file over inventing a custom path.
 
-## Muse
-1. Install the package into Muse's Python env: `pip install -e .`
-2. Merge `muse/mcp.stdio.example.json` into Muse's MCP config (or run `muse-mcp-config` equivalents for your host), setting `RESEMBLE_API_KEY`.
-3. Append `muse/AGENTS.md.snippet` to project agent instructions so Muse knows when to call Resemble tools.
-4. Restart the host; smoke with `resemble_list_detect_agents`.
+## Human one-liner
+
+> Add Resemble MCP so that you can investigate media authenticity by following https://github.com/obaid/resemble-ai-connector/blob/main/instructions.md
+
+## Grok Bot (summary)
+
+1. Get `RESEMBLE_API_KEY` (secure secret flow; Account → API at app.resemble.ai).
+2. Add MCP: command `uvx`, args `--from` `git+https://github.com/obaid/resemble-ai-connector.git` `resemble-mcp`, env `RESEMBLE_API_KEY`.
+3. Smoke with `resemble_list_detect_agents` (or `resemble_account`).
+4. Do the user’s requested authenticity job.
+
+Fallback if `uvx` is unavailable: remote `https://mcp.resemble.ai/mcp` with `Authorization: Bearer ${RESEMBLE_API_KEY}`.
+
+## Muse (summary)
+
+1. `pip install` from this git URL (or `pip install -e .` from a clone).
+2. Merge `muse/mcp.stdio.example.json`; set `RESEMBLE_API_KEY`.
+3. Append `muse/AGENTS.md.snippet`.
+4. Restart; smoke with `resemble_list_detect_agents`.
 
 ## Variables
+
 - `RESEMBLE_API_KEY` (required) — Bearer token
 - Optional `RESEMBLE_API_BASE` — default `https://app.resemble.ai/api/v2`
